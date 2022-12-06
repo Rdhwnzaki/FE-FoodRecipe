@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+
+.color-font {
+  background-color: #707070;
+}
+
+.text-step {
+  margin-top: -50px;
+}
