@@ -6,7 +6,18 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { regisUser } from "../redux/actions/register";
 
-function Register() {
+export async function getStaticProps(context) {
+  let url = `${process.env.URL_BASE}/users/register`;
+  console.log(url);
+  return {
+    props: {
+      url,
+    },
+  };
+}
+
+function Register({ url }) {
+  console.log("url", url);
   const [email_user, setEmail] = useState("");
   const [password_user, setPassword] = useState("");
   const [fullname_user, setFullname] = useState("");
@@ -26,15 +37,16 @@ function Register() {
       phone,
       password_user,
     };
-    dispatch(regisUser(data));
+    dispatch(regisUser(data, url));
   };
 
   return (
     <div>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-sm-12">
             <div
+              className="img-fluid"
               style={{
                 backgroundImage: `url(/bg2.png)`,
                 height: "900px",
@@ -53,17 +65,18 @@ function Register() {
                 <Image
                   src="/logo.png"
                   width={300}
+                  className="image-logo"
                   height={300}
                   style={{
                     opacity: "1",
                     marginTop: "300px",
-                    marginLeft: "180px",
+                    // marginLeft: "160px",
                   }}
                 />
               </div>
             </div>
           </div>
-          <div className="col-lg-4 offset-1">
+          <div className="col-lg-4 offset-lg-1 col-sm-12 mt-sm-4">
             <h3 className="text-warning text-center">Let’s Get Started !</h3>
             <h6 className="text-center">
               Create new account to access all features
@@ -93,6 +106,7 @@ function Register() {
                   type="email"
                   className="form-control"
                   id="email"
+                  minlength="10"
                   value={email_user}
                   onChange={(e) => setEmail(e.target.value)}
                   name="email_user"
@@ -123,6 +137,7 @@ function Register() {
                   type="password"
                   className="form-control"
                   id="password"
+                  minlength="8"
                   value={password_user}
                   onChange={(e) => setPassword(e.target.value)}
                   name="password_user"
@@ -144,7 +159,7 @@ function Register() {
               </div> */}
               <button
                 type="submit"
-                className="btn btn-warning text-white mt-4"
+                className="btn btn-warning text-white mt-4 button-register"
                 style={{ position: "absolute", width: "420px", height: "50px" }}
               >
                 Register Account

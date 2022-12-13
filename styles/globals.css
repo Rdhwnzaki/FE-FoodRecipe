@@ -32,3 +32,57 @@ a {
 .text-step {
   margin-top: -50px;
 }
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .button {
+    margin-left: 40px;
+  }
+  .image-logo {
+    margin-left: 90px;
+  }
+  .text-sign {
+    margin-left: 130px;
+  }
+  .text-sign-yellow {
+    margin-left: 180px;
+  }
+  .button-register {
+    margin-left: 50px;
+  }
+  .button-email {
+    margin-left: 50px;
+  }
+  .add-recipe {
+    margin-left: 25px;
+  }
+  .text-product {
+    margin-left: 80px;
+  }
+  .text-company {
+    margin-left: 120px;
+  }
+  .text-learn {
+    margin-left: 200px;
+  }
+  .text-get {
+    margin-left: 260px;
+  }
+  .button-post {
+    margin-left: 100px;
+  }
+}
+
+@media (min-width: 767.98px) {
+  .image-logo {
+    margin-left: 160px;
+  }
+  .text-sign-yellow {
+    margin-left: 250px;
+  }
+  .profile {
+    margin-left: 40px;
+  }
+  .button-post {
+    margin-left: 500px;
+  }
+}

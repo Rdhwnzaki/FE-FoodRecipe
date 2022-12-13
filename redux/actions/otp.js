@@ -7,7 +7,7 @@ export const otpPost = (data) => async (dispatch) => {
     const result = await axios.post(`http://localhost:3000/users/verif`, data);
     const otp = result.data.message;
     dispatch({ type: "CONFIRM_OTP_SUCCESS", payload: otp });
-    Router.push("/");
+    Router.push("/login");
     console.log("Confirm Otp Success");
   } catch (err) {
     console.log("User Confirm  Otp Fail");

@@ -1,10 +1,45 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 import React from "react";
+import Footer from "../../components/Footer";
+import NavbarAfter from "../../components/NavbarAfter";
 
-function detailRecipe() {
+export async function getStaticPaths() {
+  const res = await fetch(`http://localhost:3000/recipe`);
+  const data = await res.json();
+
+  const paths = data.data.map((recipe) => ({
+    params: {
+      id_recipe: `${recipe.id_recipe}`,
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
+export async function getStaticProps(context) {
+  try {
+    const id_recipe = context.params.id_recipe;
+    console.log(id_recipe);
+    const res = await fetch(`http://localhost:3000/recipe/${id_recipe}`);
+    const data = await res.json();
+    console.log(data);
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function detailRecipe({ data }) {
   return (
     <div>
+      <NavbarAfter />
       <div className="container">
         <div
           className="row justify-content-center mt-4"
@@ -19,7 +54,10 @@ function detailRecipe() {
           style={{ marginLeft: "50px" }}
         >
           <div className="col-9">
-            <Image src="/food1.png" width={900} height={500} />
+            <img
+              src={data.data[0].photo}
+              style={{ width: "900px", height: "500px" }}
+            />
           </div>
         </div>
         <div
@@ -35,11 +73,7 @@ function detailRecipe() {
           style={{ marginLeft: "50px" }}
         >
           <div className="col-2">
-            <p>
-              - 2 eggs - 2 tbsp mayonnaise - 3 slices bread - a little butter -
-              ⅓ carton of cress - 2-3 slices of tomato or a lettuce leaf and a
-              slice of ham or cheese - crisps , to serve
-            </p>
+            <p>{data.data[0].ingredients}</p>
           </div>
         </div>
         <div
@@ -154,6 +188,7 @@ function detailRecipe() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

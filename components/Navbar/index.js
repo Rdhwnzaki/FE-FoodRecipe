@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
-const Layouts = ({ children }) => {
+const Navbar = () => {
   return (
     <>
       <Head>
@@ -44,9 +44,9 @@ const Layouts = ({ children }) => {
           </div>
         </div>
       </nav>
-      <div className="container-fluid bg-white">{children}</div>
+      {/* <div className="container-fluid bg-white">{children}</div> */}
     </>
   );
 };
 
-export default Layouts;
+export default Navbar;

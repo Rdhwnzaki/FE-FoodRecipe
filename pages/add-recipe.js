@@ -5,8 +5,31 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 import { useDispatch } from "react-redux";
 import { addRecipeData } from "../redux/actions/add-recipe";
+import NavbarAfter from "../components/NavbarAfter";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-function addRecipe() {
+export const getServerSideProps = async (context) => {
+  const { token } = context.req.cookies;
+  console.log(token);
+  if (!token) {
+    return {
+      redirect: {
+        destination: "/login",
+        permanent: true,
+      },
+    };
+  }
+
+  return {
+    props: {
+      isLogin: true,
+      token: token,
+    },
+  };
+};
+
+function addRecipe({ token }) {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [photo, setPhoto] = useState("");
@@ -17,9 +40,14 @@ function addRecipe() {
     console.log(e.target.files[0]);
   };
 
+  const handleVideo = (e) => {
+    setVideo(e.target.files[0]);
+    console.log(e.target.files[0]);
+  };
+
   const dispatch = useDispatch();
 
-  const postData = (e) => {
+  const postData = async (e) => {
     e.preventDefault();
     console.log(title);
     console.log(ingredients);
@@ -31,10 +59,19 @@ function addRecipe() {
       photo,
       video,
     };
-    dispatch(addRecipeData(data));
+    const user = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    };
+    await axios.post("http://localhost:3000/recipe/add-recipe", data, user);
+    Swal.fire("Success", "Add Recipes Success", "success");
+    // dispatch(addRecipeData(data));
   };
   return (
     <div>
+      <NavbarAfter />
       <div className="container">
         {/* <div className="btn bg-light mb-5 mt-5">
           <div className="row">
@@ -111,10 +148,9 @@ function addRecipe() {
             <div className="row text-start">
               <div className="col-lg-12">
                 <input
-                  type="text"
+                  type="file"
                   id="video"
-                  value={video}
-                  onChange={(e) => setVideo(e.target.value)}
+                  onChange={handleVideo}
                   name="video"
                   placeholder=" Video "
                   className="form-control bg-light"
@@ -126,13 +162,12 @@ function addRecipe() {
             <div className="row text-start">
               <div className="col-lg-3">
                 <button
-                  className="btn"
+                  className="btn button-post"
                   type="submit"
                   style={{
                     backgroundColor: "#EFC81A",
                     color: "white",
                     width: "300px",
-                    marginLeft: "500px",
                   }}
                 >
                   Post
@@ -142,6 +177,7 @@ function addRecipe() {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -9,8 +9,9 @@ function forgotPassword() {
     <div>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-6">
+          <div className="col-lg-6 col-sm-12">
             <div
+              className="img-fluid"
               style={{
                 backgroundImage: `url(/bg2.png)`,
                 height: "900px",
@@ -29,17 +30,18 @@ function forgotPassword() {
                 <Image
                   src="/logo.png"
                   width={300}
+                  className="image-logo"
                   height={300}
                   style={{
                     opacity: "1",
                     marginTop: "300px",
-                    marginLeft: "180px",
+                    // marginLeft: "160px",
                   }}
                 />
               </div>
             </div>
           </div>
-          <div className="col-lg-4 offset-1">
+          <div className="col-lg-4 offset-lg-1 col-sm-12 mt-sm-4">
             <h3 className="text-warning text-center">Forgot Password?</h3>
             <h6 className="text-center">
               We just need your registered e-mail address to send your password
@@ -61,7 +63,7 @@ function forgotPassword() {
               </div>
               <button
                 type="submit"
-                className="btn btn-warning text-white mt-4"
+                className="btn btn-warning text-white mt-4 button-email"
                 style={{ position: "absolute", width: "420px", height: "50px" }}
               >
                 Send E-mail
