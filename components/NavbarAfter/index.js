@@ -44,13 +44,19 @@ const NavbarAfter = () => {
                 <h6 className="add-recipe">Add Recipe</h6>{" "}
               </Link>
             </div>
+            <div className="col-1">
+              <Link href="/search">
+                {" "}
+                <h6>Search</h6>{" "}
+              </Link>
+            </div>
             <div className="col-lg-1 col-sm-1">
               <Link href="/profile">
                 {" "}
                 <h6 className="profile">Profile</h6>{" "}
               </Link>
             </div>
-            <div className="col-lg-1 offset-lg-8 col-sm-1 offset-sm-5">
+            <div className="col-lg-1 offset-lg-7 col-sm-1 offset-sm-5">
               <div
                 className="btn"
                 style={{ borderRadius: "30px" }}

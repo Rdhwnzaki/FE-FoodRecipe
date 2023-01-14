@@ -1,43 +1,76 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import Image from "next/image";
+import NavbarAfter from "../../components/NavbarAfter";
+export async function getStaticPaths() {
+  const res = await fetch(`http://localhost:3000/recipe`);
+  const data = await res.json();
 
-function detailVideoRecipe() {
+  const paths = data.data.map((recipe) => ({
+    params: {
+      id_recipe: `${recipe.id_recipe}`,
+    },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+}
+export async function getStaticProps(context) {
+  try {
+    const id_recipe = context.params.id_recipe;
+    console.log(id_recipe);
+    const res = await fetch(`http://localhost:3000/recipe/${id_recipe}`);
+    const data = await res.json();
+    console.log(data);
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+  }
+}
+function detailVideoRecipe({ data }) {
   return (
     <div>
+      <NavbarAfter />
       <div className="container">
         <div className="row mb-5">
           <div className="col-7">
-            <Image src="/vid1.png" width={970} height={500} />
-            <h3 className="mt-4">
-              Beef Steak with Curry Sauce - [Step 4] Cut the condiment and then
-              mix it
-            </h3>
+            <video width={890} height={500} controls>
+              <source src={data.data[0].video} type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
             <h6 className="text-secondary">3 month ago</h6>
           </div>
           <div className="col-3 offset-2">
             <h4>Next</h4>
-            <Image src="/vid2.png" width={290} height={150} />
-            {/* <h6 className="text-white">[Step 5]</h6> */}
-            <h6>
-              Beef Steak with Curry Sauce - [Step 5] Saute condiments together
-              until turn brown
-            </h6>
-            <p className="text-secondary">HanaLohana - 3 month ago</p>
-            <Image src="/vid3.png" width={290} height={150} />
-            {/* <h6 className="text-white">[Step 5]</h6> */}
-            <h6>
-              Beef Steak with Curry Sauce - [Step 6] Roast beef until it’s
-              medium rare
-            </h6>
-            <p className="text-secondary">HanaLohana - 3 month ago</p>
-            <Image src="/vid3.png" width={290} height={150} />
-            {/* <h6 className="text-white">[Step 5]</h6> */}
-            <h6>
-              Beef Steak with Curry Sauce - [Step 7] Roast beef until it’s
-              medium rare
-            </h6>
-            <p className="text-secondary">HanaLohana - 3 month ago</p>
+            <video width={290} height={200} controls>
+              <source src={data.data[0].video} type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+            <h6>{data.data[0].title}</h6>
+            <p className="text-secondary">
+              {data.data[0].fullname_user} - 3 month ago
+            </p>
+            <video width={290} height={200} controls>
+              <source src={data.data[0].video} type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+            <h6>{data.data[0].title}</h6>
+            <p className="text-secondary">
+              {data.data[0].fullname_user} - 3 month ago
+            </p>
+            <video width={290} height={200} controls>
+              <source src={data.data[0].video} type="video/mp4" />
+              Your browser does not support HTML video.
+            </video>
+            <h6>{data.data[0].title}</h6>
+            <p className="text-secondary">
+              {data.data[0].fullname_user} - 3 month ago
+            </p>
           </div>
         </div>
       </div>

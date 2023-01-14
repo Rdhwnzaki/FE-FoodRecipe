@@ -130,7 +130,7 @@ function Register({ url }) {
                 />
               </div>
               <label for="basic-url" className="form-label mt-4">
-                Create New Password
+                Password
               </label>
               <div className="input-group mb-3">
                 <input

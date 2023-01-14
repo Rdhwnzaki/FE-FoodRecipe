@@ -45,7 +45,7 @@ function addRecipe({ token }) {
     console.log(e.target.files[0]);
   };
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const postData = async (e) => {
     e.preventDefault();

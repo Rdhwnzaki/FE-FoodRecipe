@@ -28,12 +28,18 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="col-1">
+              <Link href="/search">
+                {" "}
+                <h6>Search</h6>{" "}
+              </Link>
+            </div>
+            <div className="col-1">
               <Link href="/profile">
                 {" "}
                 <h6 style={{ marginLeft: "40px" }}>Profile</h6>{" "}
               </Link>
             </div>
-            <div className="col-1 offset-8">
+            <div className="col-1 offset-7">
               <Link href="/login">
                 <div className="btn" style={{ borderRadius: "30px" }}>
                   <Image src="/user.png" height={20} width={20} priority />

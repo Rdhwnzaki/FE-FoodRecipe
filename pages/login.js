@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { loginUser } from "../redux/actions/login";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -48,11 +45,10 @@ function login() {
       body: JSON.stringify(dataToken),
     });
     const checkToken = await cookie.json();
-    console.log(checkToken);
     if (!checkToken) {
       return Swal.fire("Warning", "Login Failed", "error");
     }
-    Swal.fire("Success", "Login Success,Returning to home", "success");
+    Swal.fire("Success", "Login Success", "success");
     console.log(dataToken);
     router.push("/");
   };
@@ -145,7 +141,7 @@ function login() {
             </Link>
             <Link href="/register">
               <h6
-                style={{ marginTop: "20px" }}
+                style={{ marginTop: "20px", marginLeft: "-40px" }}
                 className="text-lg-center text-sign"
               >
                 Don’t have an account?{" "}
