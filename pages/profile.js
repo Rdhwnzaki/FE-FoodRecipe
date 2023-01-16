@@ -179,7 +179,7 @@ function profile({ token }) {
               <ModalEdit token={token} />
             </div>
           </div>
-          <div className="row">
+          <div className="row justify-content-center">
             <div
               className="col-6"
               style={{ marginLeft: "570px", marginTop: "-50px" }}
@@ -220,7 +220,7 @@ function profile({ token }) {
                               color: "white",
                             }}
                           >
-                            Indian Salad
+                            {item.title}
                           </h4>
                           <div className="mt-4">
                             <button
@@ -274,7 +274,7 @@ function profile({ token }) {
                               color: "white",
                             }}
                           >
-                            Indian Salad
+                            {item.title}
                           </h4>
                           <div className="mt-4">
                             <button
@@ -319,7 +319,7 @@ function profile({ token }) {
                               color: "white",
                             }}
                           >
-                            Indian Salad
+                            {item.title}
                           </h4>
                           <div className="mt-4">
                             <button

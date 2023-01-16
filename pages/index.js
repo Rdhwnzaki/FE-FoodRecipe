@@ -9,6 +9,7 @@ import styles from "../styles/Landing.module.css";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import NavbarAfter from "../components/NavbarAfter";
 
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:3000/recipe");
@@ -24,7 +25,7 @@ const index = ({ data }) => {
   const router = useRouter();
   return (
     <div>
-      <Navbar />
+      <NavbarAfter />
       <div className="container">
         <div
           className="row align-items-center bg-white"
