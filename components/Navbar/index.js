@@ -3,8 +3,23 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
-const Navbar = () => {
+const Navbar = ({ login }) => {
+  const router = useRouter();
+  const logout = async () => {
+    try {
+      const result = await fetch("/api/logout");
+      const { logout } = await result.json();
+      if (logout) {
+        Swal.fire("success", "Anda Berhasil Logout", "success");
+        router.push("/login");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <Head>
@@ -40,12 +55,23 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="col-1 offset-7">
-              <Link href="/login">
-                <div className="btn" style={{ borderRadius: "30px" }}>
+              {!login ? (
+                <Link href="/login">
+                  <div className="btn" style={{ borderRadius: "30px" }}>
+                    <Image src="/user.png" height={20} width={20} priority />
+                    <h6>Login</h6>
+                  </div>
+                </Link>
+              ) : (
+                <div
+                  className="btn"
+                  style={{ borderRadius: "30px" }}
+                  onClick={() => logout()}
+                >
                   <Image src="/user.png" height={20} width={20} priority />
-                  <h6>Login</h6>
+                  <h6>Logout</h6>
                 </div>
-              </Link>
+              )}
             </div>
           </div>
         </div>

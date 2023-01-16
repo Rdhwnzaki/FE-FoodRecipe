@@ -65,7 +65,7 @@ function addRecipe({ token }) {
         "Content-Type": "multipart/form-data",
       },
     };
-    await axios.post("http://localhost:3000/recipe/add-recipe", data, user);
+    await axios.post(`${process.env.URL_BASE}/recipe/add-recipe`, data, user);
     Swal.fire("Success", "Add Recipes Success", "success");
     // dispatch(addRecipeData(data));
   };

@@ -42,7 +42,7 @@ function profile({ token }) {
   const router = useRouter();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/users`, {
+      .get(`${process.env.URL_BASE}/users`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -60,7 +60,7 @@ function profile({ token }) {
   const [like, setLike] = useState(null);
   // const [id_liked, setIdLiked] = useState(null);
   // const [id_saved, setIdSaved] = useState(null);
-  const myrecipe = `http://localhost:3000/recipe/recipe-user`;
+  const myrecipe = `${process.env.URL_BASE}/recipe/recipe-user`;
   useEffect(() => {
     axios
       .get(myrecipe, {
@@ -76,7 +76,7 @@ function profile({ token }) {
         console.log(err);
       });
   }, []);
-  const saved = `http://localhost:3000/recipe/saved-recipe/get-saved`;
+  const saved = `${process.env.URL_BASE}/recipe/saved-recipe/get-saved`;
   useEffect(() => {
     axios
       .get(saved, {
@@ -92,7 +92,7 @@ function profile({ token }) {
         console.log(err);
       });
   }, []);
-  const liked = `http://localhost:3000/recipe/like-recipe/get-like`;
+  const liked = `${process.env.URL_BASE}/recipe/like-recipe/get-like`;
   useEffect(() => {
     axios
       .get(liked, {
@@ -110,9 +110,12 @@ function profile({ token }) {
   }, []);
   const DeleteSave = (id_saved) => {
     axios
-      .delete(`http://localhost:3000/recipe/saved-recipe/delete/${id_saved}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .delete(
+        `${process.env.URL_BASE}/recipe/saved-recipe/delete/${id_saved}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
       .then((res) => {
         console.log("Delete save recipe success");
         console.log(res);
@@ -127,7 +130,7 @@ function profile({ token }) {
   };
   const DeleteLike = (id_liked) => {
     axios
-      .delete(`http://localhost:3000/recipe/like-recipe/delete/${id_liked}`, {
+      .delete(`${process.env.URL_BASE}/recipe/like-recipe/delete/${id_liked}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -144,7 +147,7 @@ function profile({ token }) {
   };
   const DeleteRecipe = (id_recipe) => {
     axios
-      .delete(`http://localhost:3000/recipe/delete-recipe/${id_recipe}`, {
+      .delete(`${process.env.URL_BASE}/recipe/delete-recipe/${id_recipe}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {

@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import NavbarAfter from "../../components/NavbarAfter";
 export async function getStaticPaths() {
-  const res = await fetch(`http://localhost:3000/recipe`);
+  const res = await fetch(`${process.env.URL_BASE}/recipe`);
   const data = await res.json();
 
   const paths = data.data.map((recipe) => ({
@@ -20,7 +20,7 @@ export async function getStaticProps(context) {
   try {
     const id_recipe = context.params.id_recipe;
     console.log(id_recipe);
-    const res = await fetch(`http://localhost:3000/recipe/${id_recipe}`);
+    const res = await fetch(`${process.env.URL_BASE}/recipe/${id_recipe}`);
     const data = await res.json();
     console.log(data);
     return {

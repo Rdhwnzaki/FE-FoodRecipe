@@ -16,7 +16,7 @@ export async function getServerSideProps(context) {
   try {
     const id_recipe = context.params.id_recipe;
     console.log(id_recipe);
-    const res = await fetch(`http://localhost:3000/recipe/${id_recipe}`);
+    const res = await fetch(`${process.env.URL_BASE}/recipe/${id_recipe}`);
     const data = await res.json();
     console.log(data);
     const { token } = context.req.cookies;
@@ -42,7 +42,7 @@ function detailRecipe({ data, id_recipe, token }) {
   const [dataComment, setDataComment] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/recipe/comment/${id_recipe}`)
+      .get(`${process.env.URL_BASE}/recipe/comment/${id_recipe}`)
       .then((res) => {
         console.log("Get comment by recipe success");
         console.log(res.data);
@@ -64,7 +64,7 @@ function detailRecipe({ data, id_recipe, token }) {
     e.preventDefault();
     axios
       .post(
-        `http://localhost:3000/recipe/add-comment/${id_recipe}`,
+        `${process.env.URL_BASE}/recipe/add-comment/${id_recipe}`,
         postData,
         user
       )
@@ -86,7 +86,11 @@ function detailRecipe({ data, id_recipe, token }) {
       recipe_id: id_recipe,
     };
     axios
-      .post(`http://localhost:3000/recipe/saved-recipe/post-saved`, form, user)
+      .post(
+        `${process.env.URL_BASE}/recipe/saved-recipe/post-saved`,
+        form,
+        user
+      )
       .then((res) => {
         console.log("Add save recipe success");
         console.log(res);
@@ -105,7 +109,7 @@ function detailRecipe({ data, id_recipe, token }) {
       recipe_id: id_recipe,
     };
     axios
-      .post(`http://localhost:3000/recipe/like-recipe/post-like`, form, user)
+      .post(`${process.env.URL_BASE}/recipe/like-recipe/post-like`, form, user)
       .then((res) => {
         console.log("Add like recipe success");
         console.log(res);

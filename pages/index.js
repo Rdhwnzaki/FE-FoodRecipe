@@ -11,21 +11,23 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NavbarAfter from "../components/NavbarAfter";
 
-export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/recipe");
+export async function getServerSideProps(context) {
+  const res = await fetch(`${process.env.URL_BASE}/recipe`);
+  const { token } = context.req.cookies;
   const data = await res.json();
   console.log(data);
   return {
     props: {
       data,
+      login: token ? true : false,
     },
   };
 }
-const index = ({ data }) => {
+const index = ({ data, login }) => {
   const router = useRouter();
   return (
     <div>
-      <NavbarAfter />
+      <Navbar login={login} />
       <div className="container">
         <div
           className="row align-items-center bg-white"

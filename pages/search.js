@@ -11,7 +11,7 @@ export const getServerSideProps = async (context) => {
   if (!token) {
     return {
       redirect: {
-        destination: "/auth/login",
+        destination: "/login",
         permanent: true,
       },
     };
@@ -19,13 +19,13 @@ export const getServerSideProps = async (context) => {
   console.log(token, "token ssr");
   return {
     props: {
-      isLogin: token ? true : false,
+      login: token ? true : false,
       token: token,
     },
   };
 };
 
-export default function Search({ isLogin, token }) {
+export default function Search({ login, token }) {
   const [recipe, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,7 +35,7 @@ export default function Search({ isLogin, token }) {
     const fetchRecipe = async () => {
       setLoading(true);
       const result = await axios.get(
-        `http://localhost:3000/recipe/search/search-recipe?${search}`
+        `${process.env.URL_BASE}/recipe/search/search-recipe?${search}`
       );
       setRecipes(result.data.data);
       setLoading(false);
@@ -54,7 +54,7 @@ export default function Search({ isLogin, token }) {
   return (
     <>
       <header>
-        <Navbar />
+        <Navbar login={login} />
       </header>
       <div className="container justify-align-center">
         <div>
