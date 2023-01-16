@@ -16,11 +16,9 @@ export const Recipe = ({ recipe, loading, token }) => {
           <div
             className="container text-warning shadow my-4"
             style={{ backgroundColor: "#f5f5f5" }}
+            key={item.id_recipe}
           >
-            <div
-              key={item.id_recipe}
-              onClick={() => Router.push(`/recipe/${item.id_recipe}`)}
-            >
+            <div onClick={() => Router.push(`/recipe/${item.id_recipe}`)}>
               <div className="row align-items-center">
                 <div className="col-3">
                   <img

@@ -58,7 +58,13 @@ const Navbar = ({ login }) => {
               {!login ? (
                 <Link href="/login">
                   <div className="btn" style={{ borderRadius: "30px" }}>
-                    <Image src="/user.png" height={20} width={20} priority />
+                    <Image
+                      src="/user.png"
+                      height={20}
+                      width={20}
+                      priority
+                      alt=""
+                    />
                     <h6>Login</h6>
                   </div>
                 </Link>
@@ -68,7 +74,13 @@ const Navbar = ({ login }) => {
                   style={{ borderRadius: "30px" }}
                   onClick={() => logout()}
                 >
-                  <Image src="/user.png" height={20} width={20} priority />
+                  <Image
+                    src="/user.png"
+                    height={20}
+                    width={20}
+                    priority
+                    alt=""
+                  />
                   <h6>Logout</h6>
                 </div>
               )}

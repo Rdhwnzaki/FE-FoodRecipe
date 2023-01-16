@@ -85,6 +85,7 @@ function login() {
                     marginTop: "300px",
                     // marginLeft: "160px",
                   }}
+                  alt=""
                 />
               </div>
             </div>
@@ -94,7 +95,7 @@ function login() {
             <h6 className="text-center">Log in into your exiting account</h6>
             <hr />
             <form onSubmit={postData}>
-              <label for="basic-url" className="form-label">
+              <label htmlFor="basic-url" className="form-label">
                 E-mail
               </label>
               <div className="input-group mb-3">
@@ -102,7 +103,7 @@ function login() {
                   type="email"
                   className="form-control"
                   id="email"
-                  minlength="10"
+                  minLength="10"
                   value={email_user}
                   onChange={(e) => setEmail(e.target.value)}
                   name="email"
@@ -110,7 +111,7 @@ function login() {
                   placeholder="examplexxx@gmail.com"
                 />
               </div>
-              <label for="basic-url" className="form-label mt-4">
+              <label htmlFor="basic-url" className="form-label mt-4">
                 Password
               </label>
               <div className="input-group mb-3">
@@ -118,7 +119,7 @@ function login() {
                   type="password"
                   className="form-control"
                   id="password"
-                  minlength="8"
+                  minLength="8"
                   value={password_user}
                   onChange={(e) => setPassword(e.target.value)}
                   name="password"

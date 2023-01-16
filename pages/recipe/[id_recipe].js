@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
@@ -215,7 +216,7 @@ function detailRecipe({ data, id_recipe, token }) {
               }
               style={{ width: "190px", height: "45px" }}
             >
-              <Image src="/vid.png" height={10} width={10} />
+              <Image src="/vid.png" height={10} width={10} alt="" />
             </button>
           </div>
         </div>
@@ -225,7 +226,7 @@ function detailRecipe({ data, id_recipe, token }) {
         >
           <div className="col-12">
             <textarea
-              class="form-control bg-light"
+              className="form-control bg-light"
               id="exampleFormControlTextarea1"
               rows="9"
               placeholder="Comment :"
@@ -264,7 +265,7 @@ function detailRecipe({ data, id_recipe, token }) {
         >
           {dataComment ? (
             dataComment.map((item) => (
-              <>
+              <div key={item.id_comment}>
                 <div className="col-1">
                   <img
                     src={item.photo}
@@ -277,7 +278,7 @@ function detailRecipe({ data, id_recipe, token }) {
                   <h6>{item.fullname_user}</h6>
                   <p>{item.comment_text}</p>
                 </div>
-              </>
+              </div>
             ))
           ) : (
             <h1>...Loading</h1>

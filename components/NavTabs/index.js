@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -30,7 +32,7 @@ const NavTabs = ({ token }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/recipe/recipe-user`, {
+      .get(`${process.env.URL_BASE}/recipe/recipe-user`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -60,6 +62,7 @@ const NavTabs = ({ token }) => {
                     <img
                       src={item.photo}
                       style={{ height: "300px", width: "30px" }}
+                      alt=""
                     />
                     <h4
                       style={{
@@ -80,7 +83,7 @@ const NavTabs = ({ token }) => {
           <Tab eventKey="savedrecipe" title="Saved Recipe">
             <div className="row">
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",
@@ -92,7 +95,7 @@ const NavTabs = ({ token }) => {
                 </h4>
               </div>
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",
@@ -104,7 +107,7 @@ const NavTabs = ({ token }) => {
                 </h4>
               </div>
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",
@@ -120,7 +123,7 @@ const NavTabs = ({ token }) => {
           <Tab eventKey="likedrecipe" title="Liked Recipe">
             <div className="row">
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",
@@ -132,7 +135,7 @@ const NavTabs = ({ token }) => {
                 </h4>
               </div>
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",
@@ -144,7 +147,7 @@ const NavTabs = ({ token }) => {
                 </h4>
               </div>
               <div className="col-3">
-                <Image src="/food9.png" height={300} width={300} />
+                <Image src="/food9.png" height={300} width={300} alt="" />
                 <h4
                   style={{
                     marginTop: "-40px",

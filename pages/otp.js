@@ -51,13 +51,14 @@ function otp() {
                     marginTop: "300px",
                     // marginLeft: "160px",
                   }}
+                  alt=""
                 />
               </div>
             </div>
           </div>
           <div className="col-lg-4 offset-lg-1 col-sm-12 mt-sm-4">
             <form onSubmit={postData}>
-              <label for="basic-url" className="form-label">
+              <label htmlFor="basic-url" className="form-label">
                 E-Mail
               </label>
               <div className="input-group mb-3">
@@ -71,7 +72,7 @@ function otp() {
                   placeholder="Email"
                 />
               </div>
-              <label for="basic-url" className="form-label">
+              <label htmlFor="basic-url" className="form-label">
                 Code 6 Digit
               </label>
               <div className="input-group mb-3">

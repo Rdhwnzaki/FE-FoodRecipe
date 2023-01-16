@@ -62,7 +62,7 @@ const NavbarAfter = () => {
                 style={{ borderRadius: "30px" }}
                 onClick={() => logout()}
               >
-                <Image src="/user.png" height={20} width={20} priority />
+                <Image src="/user.png" height={20} width={20} priority alt="" />
                 <h6>Logout</h6>
               </div>
             </div>

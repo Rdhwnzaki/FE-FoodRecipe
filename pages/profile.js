@@ -2,7 +2,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import ModalEdit from "../components/Modal";
 import axios from "axios";

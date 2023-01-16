@@ -72,6 +72,7 @@ function Register({ url }) {
                     marginTop: "300px",
                     // marginLeft: "160px",
                   }}
+                  alt=""
                 />
               </div>
             </div>
@@ -83,7 +84,7 @@ function Register({ url }) {
             </h6>
             <hr />
             <form onSubmit={postData}>
-              <label for="basic-url" className="form-label">
+              <label htmlFor="basic-url" className="form-label">
                 Name
               </label>
               <div className="input-group mb-3">
@@ -98,7 +99,7 @@ function Register({ url }) {
                   placeholder="Name"
                 />
               </div>
-              <label for="basic-url" className="form-label mt-4">
+              <label htmlFor="basic-url" className="form-label mt-4">
                 Email address*
               </label>
               <div className="input-group mb-3">
@@ -106,7 +107,7 @@ function Register({ url }) {
                   type="email"
                   className="form-control"
                   id="email"
-                  minlength="10"
+                  minLength="10"
                   value={email_user}
                   onChange={(e) => setEmail(e.target.value)}
                   name="email_user"
@@ -114,7 +115,7 @@ function Register({ url }) {
                   placeholder="Enter email address"
                 />
               </div>
-              <label for="basic-url" className="form-label mt-4">
+              <label htmlFor="basic-url" className="form-label mt-4">
                 Phone Number
               </label>
               <div className="input-group mb-3">
@@ -129,7 +130,7 @@ function Register({ url }) {
                   placeholder="08xxxxxxxxxx"
                 />
               </div>
-              <label for="basic-url" className="form-label mt-4">
+              <label htmlFor="basic-url" className="form-label mt-4">
                 Password
               </label>
               <div className="input-group mb-3">
@@ -137,7 +138,7 @@ function Register({ url }) {
                   type="password"
                   className="form-control"
                   id="password"
-                  minlength="8"
+                  minLength="8"
                   value={password_user}
                   onChange={(e) => setPassword(e.target.value)}
                   name="password_user"

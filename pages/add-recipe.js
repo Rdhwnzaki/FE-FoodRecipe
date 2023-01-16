@@ -133,7 +133,7 @@ function addRecipe({ token }) {
             <div className="row text-start">
               <div className="col-lg-12">
                 <textarea
-                  class="form-control bg-light"
+                  className="form-control bg-light"
                   id="exampleFormControlTextarea1"
                   value={ingredients}
                   onChange={(e) => setIngredients(e.target.value)}

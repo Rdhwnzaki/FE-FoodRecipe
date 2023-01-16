@@ -43,7 +43,7 @@ const index = ({ data, login }) => {
             />
           </div>
           <div className="col-4 offset-3 " style={{ marginBottom: "120px" }}>
-            <Image src="/food1.png" height={500} width={500} priority />
+            <Image src="/food1.png" height={500} width={500} priority alt="" />
           </div>
         </div>
         <div className="row align-items-center bg-white">
@@ -65,7 +65,7 @@ const index = ({ data, login }) => {
             className="col-6"
             style={{ marginTop: "90px", marginBottom: "100px" }}
           >
-            <Image src="/food2.png" height={500} width={500} />
+            <Image src="/food2.png" height={500} width={500} alt="" />
           </div>
           <div className="col-4 offset-1">
             <h1>Healthy Bone Broth Ramen (Quick & Easy)</h1>
@@ -101,7 +101,7 @@ const index = ({ data, login }) => {
               className="col-6"
               style={{ marginTop: "90px", marginBottom: "100px" }}
             >
-              <Image src="/food3.png" height={500} width={500} />
+              <Image src="/food3.png" height={500} width={500} alt="" />
             </div>
             <div className="col-4 offset-1">
               <h1>Healthy Bone Broth Ramen (Quick & Easy)</h1>
@@ -144,6 +144,7 @@ const index = ({ data, login }) => {
                 <img
                   src={item.photo}
                   style={{ height: "400px", width: "400px" }}
+                  alt=""
                 />
                 <h6
                   style={{ marginTop: "-40px", marginLeft: "13px" }}

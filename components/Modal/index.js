@@ -49,7 +49,7 @@ function ModalEdit({ token }) {
       },
     };
     await axios
-      .put("http://localhost:3000/users/update-photo", data, user)
+      .put(`${process.env.URL_BASE}/users/update-photo`, data, user)
       .then((res) => {
         console.log("Update profile succes");
         console.log(res);
@@ -67,7 +67,7 @@ function ModalEdit({ token }) {
     <div>
       <div className="btn" onClick={handleShow}>
         <div style={{ marginLeft: "68px", marginTop: "-85px" }}>
-          <Image src="/edit.png" width={20} height={20} priority />
+          <Image src="/edit.png" width={20} height={20} priority alt="" />
         </div>
       </div>
 
