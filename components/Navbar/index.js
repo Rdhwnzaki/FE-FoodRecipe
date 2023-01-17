@@ -10,7 +10,7 @@ const Navbar = ({ login }) => {
   const router = useRouter();
   const logout = async () => {
     try {
-      const result = await fetch("/api/logout");
+      const result = await fetch("api/logout");
       const { logout } = await result.json();
       if (logout) {
         Swal.fire("success", "Anda Berhasil Logout", "success");
