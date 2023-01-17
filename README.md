@@ -1,34 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Food Recipe</h1>
+ <p align="center">
+    Cooking is easy using Food Recipes
+  </p>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built with</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#screenshots">Screenshots</a></li>
+    <li><a href="#related-project">Related Project</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+## About The Project
+
+Food Recipe is an application that provides various kinds of recipes that you can use..
+
+### Built With
+
+This app was built with some technologies below:
+
+- [Next Js](https://nextjs.org/)
+- [Bootstrap](https://www.npmjs.com/package/bootstrap)
+- [Sweetalert2](https://www.npmjs.com/package/sweetalert2)
+- [Redux](https://www.npmjs.com/package/redux)
+- [React-redux](https://www.npmjs.com/package/react-redux)
+- [Redux-logger](https://www.npmjs.com/package/redux-logger)
+- [Redux-thunk](https://www.npmjs.com/search?q=redux-thunk)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=id)
+- [Javascript](https://www.javascript.com/)
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
-First, run the development server:
+### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
+- Clone This Front End Repo
+
+```
+git clone https://github.com/Rdhwnzaki/Frontend-FoodRecipe.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Go To Folder Repo
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+cd Frontend-FoodRecipe
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Install Module
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm install
+```
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+| Register Page                                                                                                 | Verification Page                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| ![Register](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/regis.png "Register Page") | ![Verification](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/otp.png "Verification Page") |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Login                                                                                              | Landing Page                                                                                                       |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ![Login](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/login.png "Login") | ![Landing Page](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/landing.png "Landing Page") |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+| Search                                                                                                | Recipe Detail                                                                                                             |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ![Search](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/search.png "Search") | ![Recipe Detail](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/detailrecipe.png "Recipe Detail") |
 
-## Deploy on Vercel
+| Detail Video Recipe                                                                                                                  | Profile                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| ![Detail Video Recipe](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/detailvideo.png "Detail Video Recipe") | ![Profile](https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/profile.png "Profile") |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Related Project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [`BACKEND FOOD RECIPE`](https://github.com/Rdhwnzaki/Backend-FoodRecipe)
+- [`DEMO FOOD RECIPE`](https://frontend-food-recipe.vercel.app/)
+
+## License
+
+Distributed under the [MIT](/LICENSE) License.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
