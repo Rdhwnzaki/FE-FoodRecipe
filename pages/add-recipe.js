@@ -62,10 +62,12 @@ function addRecipe({ token }) {
     const user = {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data,application/json",
+        "Content-Type": "multipart/form-data",
       },
     };
-    await axios.post(`${process.env.URL_BASE}/recipe/add-recipe`, data, user);
+    await axios.post(`${process.env.URL_BASE}/recipe/add-recipe`, data, user, {
+      "Content-Type": "application/json",
+    });
     Swal.fire("Success", "Add Recipes Success", "success");
     // dispatch(addRecipeData(data));
   };
