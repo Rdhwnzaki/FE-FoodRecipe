@@ -72,7 +72,7 @@ const Navbar = ({ login }) => {
                 <div
                   className="btn"
                   style={{ borderRadius: "30px" }}
-                  onClick={() => logout()}
+                  onClick={logout}
                 >
                   <Image
                     src="/user.png"
