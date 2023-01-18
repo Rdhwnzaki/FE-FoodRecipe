@@ -229,7 +229,6 @@ function profile({ token }) {
                               className="btn btn-warning text-white"
                               style={{
                                 marginLeft: "190px",
-                                marginTop: "-100px",
                                 marginRight: "20px",
                               }}
                             >
@@ -239,9 +238,6 @@ function profile({ token }) {
                               key={item.id_recipe}
                               onClick={() => DeleteRecipe(item.id_recipe)}
                               className="btn btn-danger text-white"
-                              style={{
-                                marginTop: "-100px",
-                              }}
                             >
                               <BsFillBucketFill />
                             </button>
@@ -284,7 +280,6 @@ function profile({ token }) {
                               onClick={() => DeleteSave(item.id_saved)}
                               className="btn btn-danger text-white"
                               style={{
-                                marginTop: "-100px",
                                 marginLeft: "250px",
                               }}
                             >
@@ -329,7 +324,6 @@ function profile({ token }) {
                               onClick={() => DeleteLike(item.id_liked)}
                               className="btn btn-danger text-white"
                               style={{
-                                marginTop: "-100px",
                                 marginLeft: "250px",
                               }}
                             >
