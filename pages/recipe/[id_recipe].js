@@ -13,25 +13,25 @@ import { useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-export async function getServerSideProps(context) {
-  try {
-    const id_recipe = context.params.id_recipe;
-    console.log(id_recipe);
-    const res = await fetch(`${process.env.URL_BASE}/recipe/${id_recipe}`);
-    const data = await res.json();
-    console.log(data);
-    const { token } = context.req.cookies;
-    return {
-      props: {
-        data,
-        id_recipe,
-        token: token,
-      },
-    };
-  } catch (err) {
-    console.log(err);
-  }
-}
+// export async function getServerSideProps(context) {
+//   try {
+//     const id_recipe = context.params.id_recipe;
+//     console.log(id_recipe);
+//     const res = await fetch(`${process.env.URL_BASE}/recipe/${id_recipe}`);
+//     const data = await res.json();
+//     console.log(data);
+//     const { token } = context.req.cookies;
+//     return {
+//       props: {
+//         data,
+//         id_recipe,
+//         token: token,
+//       },
+//     };
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 function detailRecipe({ data, id_recipe, token }) {
   const router = useRouter();
