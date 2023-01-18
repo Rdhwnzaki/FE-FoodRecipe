@@ -1,22 +1,21 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import Image from "next/image";
 import NavbarAfter from "../../components/NavbarAfter";
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.URL_BASE}/recipe`);
-  const data = await res.json();
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.URL_BASE}/recipe`);
+//   const data = await res.json();
 
-  const paths = data.data.map((recipe) => ({
-    params: {
-      id_recipe: `${recipe.id_recipe}`,
-    },
-  }));
-  return {
-    paths,
-    fallback: false,
-  };
-}
-export async function getStaticProps(context) {
+//   const paths = data.data.map((recipe) => ({
+//     params: {
+//       id_recipe: `${recipe.id_recipe}`,
+//     },
+//   }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
+export async function getServerSideProps(context) {
   try {
     const id_recipe = context.params.id_recipe;
     console.log(id_recipe);
