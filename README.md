@@ -1,4 +1,8 @@
 <h1 align="center">Food Recipe</h1>
+
+<p align="center">
+  <img height="150" src="https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/logobaru.png"  />
+</p>
  <p align="center">
     Cooking is easy using Food Recipes
   </p>
