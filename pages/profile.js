@@ -228,7 +228,6 @@ function profile({ token }) {
                             <button
                               className="btn btn-warning text-white"
                               style={{
-                                marginLeft: "190px",
                                 marginRight: "20px",
                               }}
                             >
@@ -279,9 +278,6 @@ function profile({ token }) {
                               key={item.id_saved}
                               onClick={() => DeleteSave(item.id_saved)}
                               className="btn btn-danger text-white"
-                              style={{
-                                marginLeft: "250px",
-                              }}
                             >
                               <BsFillBucketFill />
                             </button>
@@ -323,9 +319,6 @@ function profile({ token }) {
                               key={item.id_liked}
                               onClick={() => DeleteLike(item.id_liked)}
                               className="btn btn-danger text-white"
-                              style={{
-                                marginLeft: "250px",
-                              }}
                             >
                               <BsFillBucketFill />
                             </button>
