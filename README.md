@@ -1,10 +1,10 @@
-<h1 align="center">Food Recipe</h1>
+<h1 align="center">Recipenation</h1>
 
 <p align="center">
   <img height="150" src="https://github.com/Rdhwnzaki/Frontend-FoodRecipe/blob/main/screenshoot/logobaru.png"  />
 </p>
  <p align="center">
-    Cooking is easy using Food Recipes
+    Cooking is easy using Recipenation
   </p>
 
 <!-- TABLE OF CONTENTS -->
