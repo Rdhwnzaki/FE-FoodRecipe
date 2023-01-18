@@ -62,7 +62,7 @@ function addRecipe({ token }) {
     const user = {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
+        "Content-Type": ["multipart/form-data", "aplication/json"],
       },
     };
     await axios.post(`${process.env.URL_BASE}/recipe/add-recipe`, data, user);
