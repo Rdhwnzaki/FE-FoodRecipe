@@ -63,7 +63,7 @@ function updateRecipeData({ token, id_recipe }) {
     const user = {
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": ["multipart/form-data", "aplication/json"],
+        "Content-Type": "multipart/form-data",
       },
     };
     await axios.put(
