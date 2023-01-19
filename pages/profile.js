@@ -206,14 +206,14 @@ function profile({ token }) {
                         <div
                           className="col-3"
                           key={item.id_recipe}
-                          onClick={() =>
-                            router.push(`/recipe/${item.id_recipe}`)
-                          }
                         >
                           <img
                             src={item.photo}
                             alt=""
                             style={{ height: "300px", width: "300px" }}
+                            onClick={() =>
+                              router.push(`/recipe/${item.id_recipe}`)
+                            }
                           />
                           <h4
                             style={{
@@ -229,7 +229,13 @@ function profile({ token }) {
                               className="btn btn-warning text-white"
                               style={{
                                 marginRight: "20px",
+                                marginLeft: "190px",
+                                marginTop: "-100px",
                               }}
+                              key={item.id_recipe}
+                              onClick={() =>
+                                router.push(`/update-recipe/${item.id_recipe}`)
+                              }
                             >
                               <RiEditBoxLine />
                             </button>
@@ -237,6 +243,7 @@ function profile({ token }) {
                               key={item.id_recipe}
                               onClick={() => DeleteRecipe(item.id_recipe)}
                               className="btn btn-danger text-white"
+                              style={{marginTop: "-100px",}}
                             >
                               <BsFillBucketFill />
                             </button>
@@ -278,6 +285,7 @@ function profile({ token }) {
                               key={item.id_saved}
                               onClick={() => DeleteSave(item.id_saved)}
                               className="btn btn-danger text-white"
+                              style={{marginLeft: "250px",marginTop: "-100px",}}
                             >
                               <BsFillBucketFill />
                             </button>
@@ -319,6 +327,7 @@ function profile({ token }) {
                               key={item.id_liked}
                               onClick={() => DeleteLike(item.id_liked)}
                               className="btn btn-danger text-white"
+                              style={{marginLeft: "250px",marginTop: "-100px",}}
                             >
                               <BsFillBucketFill />
                             </button>
