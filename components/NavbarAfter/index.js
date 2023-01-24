@@ -11,7 +11,7 @@ const NavbarAfter = () => {
   const router = useRouter();
   const logout = async () => {
     try {
-      const result = await fetch("/api/logout");
+      const result = await fetch("api/logout");
       const { logout } = await result.json();
       if (logout) {
         Swal.fire("success", "Anda Berhasil Logout", "success");
@@ -60,7 +60,7 @@ const NavbarAfter = () => {
               <div
                 className="btn"
                 style={{ borderRadius: "30px" }}
-                onClick={() => logout()}
+                onClick={logout}
               >
                 <Image src="/user.png" height={20} width={20} priority alt="" />
                 <h6>Logout</h6>
