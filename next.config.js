@@ -4,6 +4,9 @@ const nextConfig = {
   env: {
     URL_BASE: process.env.URL_BASE,
   },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
 };
 
 module.exports = nextConfig;
